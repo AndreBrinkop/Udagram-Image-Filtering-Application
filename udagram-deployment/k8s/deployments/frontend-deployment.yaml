@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: frontend
+  name: frontend
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        api: external
+        service: frontend
+    spec:
+      containers:
+      - image: abrinkop/udagram-frontend
+        imagePullPolicy: Always
+        name: frontend
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+          requests:
+            cpu: 250m
+            memory: 64Mi
+      restartPolicy: Always

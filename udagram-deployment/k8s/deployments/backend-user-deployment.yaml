@@ -1,0 +1,56 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    service: backend-user
+  name: backend-user
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-user
+    spec:
+      containers:
+      - env:
+        - name: URL
+          valueFrom:
+            configMapKeyRef:
+              key: URL
+              name: env-config
+        - name: JWT_SECRET
+          valueFrom:
+            configMapKeyRef:
+              key: JWT_SECRET
+              name: env-config
+        - name: POSTGRESS_DB
+          valueFrom:
+            configMapKeyRef:
+              key: POSTGRES_DB
+              name: env-config
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: POSTGRES_HOST
+              name: env-config
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: POSTGRES_PASSWORD
+              name: env-secret
+        - name: POSTGRES_USERNAME
+          valueFrom:
+            secretKeyRef:
+              key: POSTGRES_USERNAME
+              name: env-secret
+        image: abrinkop/udagram-restapi-user
+        imagePullPolicy: Always
+        name: backend-user
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+          requests:
+            cpu: 250m
+            memory: 64Mi
+      restartPolicy: Always
