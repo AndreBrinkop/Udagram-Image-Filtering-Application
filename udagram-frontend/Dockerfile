@@ -13,5 +13,7 @@ RUN ionic build
 
 ## Run 
 FROM nginx:alpine
-#COPY www /usr/share/nginx/html
+# COPY www /usr/share/nginx/html
 COPY --from=ionic  /usr/src/app/www /usr/share/nginx/html
+# Replace default nginx config to delegate routing to the ionic app
+COPY nginx.conf /etc/nginx/conf.d/default.conf
