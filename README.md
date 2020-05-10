@@ -7,6 +7,8 @@ The project is split into multiple parts:
 2. Backend RESTful API - Node-Express application split into two microservices
 3. Reverse Proxy - API Gateway build with Nginx to delegate traffic towards the backend
 
+![Screenshot showing the Udagram Application in action](screenshots/Application.png)
+
 ## Getting Started
 > _tip_: it's recommended that you start with getting the backend API running since the frontend web application depends on the API.
 
