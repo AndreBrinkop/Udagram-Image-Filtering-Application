@@ -55,4 +55,4 @@ Create an AWS S3 bucket. Set the config values for environment variables prefixe
     ```bash
     ionic serve
     ```
-* You can visit `http://localhost:8100` in your web browser to verify that the application is running. You should see a web interface.
+* You can visit `http://localhost:80` in your web browser to verify that the application is running. You should see a web interface.
