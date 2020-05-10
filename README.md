@@ -56,3 +56,6 @@ Create an AWS S3 bucket. Set the config values for environment variables prefixe
     ionic serve
     ```
 * You can visit `http://localhost:80` in your web browser to verify that the application is running. You should see a web interface.
+
+## Run the Application
+The application is build up as multiple microservice modules. It is recommended to run the application using the [provided dockcer-compose files](https://github.com/AndreBrinkop/Udagram-Image-Filtering-Application/blob/master/udagram-deployment/docker/README.md).
