@@ -27,8 +27,8 @@ Create a PostgreSQL database either locally or on AWS RDS. Set the config values
 ### S3
 Create an AWS S3 bucket. Set the config values for environment variables prefixed with `AWS_` in `set_env.sh`.
 
-### Backend API
-* To download all the package dependencies, run the command from the directory `udagram-api/`:
+### Backend Microservices
+* To download all the package dependencies, run the command from one of the microservice directories `udagram-restapi-feed/` and `udagram-restapi-user/`:
     ```bash
     npm install .
     ```
