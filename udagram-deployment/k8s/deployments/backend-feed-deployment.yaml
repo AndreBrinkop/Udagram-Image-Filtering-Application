@@ -38,25 +38,25 @@ spec:
             configMapKeyRef:
               key: JWT_SECRET
               name: env-config
-        - name: POSTGRESS_DB
+        - name: POSTGRES_DB
           valueFrom:
             configMapKeyRef:
-              key: POSTGRESS_DB
+              key: POSTGRES_DB
               name: env-config
-        - name: POSTGRESS_HOST
+        - name: POSTGRES_HOST
           valueFrom:
             configMapKeyRef:
-              key: POSTGRESS_HOST
+              key: POSTGRES_HOST
               name: env-config
-        - name: POSTGRESS_PASSWORD
+        - name: POSTGRES_PASSWORD
           valueFrom:
             secretKeyRef:
-              key: POSTGRESS_PASSWORD
+              key: POSTGRES_PASSWORD
               name: env-secret
-        - name: POSTGRESS_USERNAME
+        - name: POSTGRES_USERNAME
           valueFrom:
             secretKeyRef:
-              key: POSTGRESS_USERNAME
+              key: POSTGRES_USERNAME
               name: env-secret
         image: abrinkop/udagram-restapi-feed
         imagePullPolicy: Always
